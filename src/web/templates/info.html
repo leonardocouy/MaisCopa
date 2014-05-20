@@ -1,0 +1,114 @@
+<br>
+<div class="btn-toolbar">
+    <div class="btn-group">
+       <button class="btn btn-default" ui-sref="route_index"><i class="glyphicon glyphicon-arrow-left"></i> Voltar para página principal</button>
+    </div>
+</div>
+
+
+ <div class="row">
+     <br>
+   <div class="col-md-4 col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h4>Informações Gerais</h4></div>
+   			<div class="panel-body">
+                <div class="list-group">
+                    <label> Nome do Empreendimento: </label>
+                    <span> {_ info.descricao _} </span>
+                    <hr>
+                    <label> Cidade: </label>
+                    <span> {_ info.cidadeSede.descricao _} </span>
+                    <hr>
+                    <label> Tema Associado: </label>
+                    <span> {_ info.tema.descricao _} </span>
+                    <hr>
+                    <label> Agrupador Associado: </label>
+                    <span ng-if="info.agrupador.descricao != ' '"> {_ info.agrupador.descricao _} </span>
+                    <span ng-if="info.agrupador.descricao == None"> Nenhum agrupador associado </span>
+                    <hr>
+                    <label> Fonte de recurso provem da matriz de responsabilidade? </label>
+                    <span ng-if="info.fonteMatriz == 'true'"> Sim </span>
+                    <span ng-if="info.fonteMatriz == 'false'"> Não </span>
+                    <hr>
+                    <label> Aplicação efetuada ao Empreendimento é? </label>
+                    <span ng-if="info.direto == 'true'"> Direto </span>
+                    <span ng-if="info.direto == 'false'"> Indireta </span>
+                </div>
+            </div>
+   		</div>
+      </div>
+<div class="col-md-4 col-sm-6">
+     <div class="panel panel-default">
+       <div class="panel-heading"><h4>Observações sobre o Empreendimento</h4></div>
+        <div class="panel-body">
+          <div class="clearfix"></div>
+            <span ng-if="info.observacao != ' '"> {_ info.observacao _} </span>
+            <span ng-if="info.observacao == None">  Não possui observação sobre este Empreendimento. </span>
+        </div>
+     </div>
+     </div>
+<div class="col-md-4 col-sm-6">
+    <div class="panel panel-default">
+        <div class="panel-heading"><h4>Progressão</h4></div>
+            <div class="panel-body">
+                <div class="list-group">
+                    <label> Situação do Empreendimento: </label>
+                    <span> {_ info.andamento.descricao _} </span>
+                    <hr>
+                    <label> Empreendimento Ativo ou Excluído? </label>
+                    <span ng-if="info.ativo == 'true'"> Ativo </span>
+                    <span ng-if="info.ativo == 'false'"> Excluido </span>
+                    <hr>
+                    <label> Estado Atual do Empreendimento: </label>
+                    <span> {_ info.faseGrupo.descricao _} </span>
+                    <hr>
+                    <label> Percentual de Execução Fisica: </label>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info"  ng-if="info.valorPercentualExecucaoFisica < 50" style="width: {_ info.valorPercentualExecucaoFisica _}%">
+                            <span> {_ info.valorPercentualExecucaoFisica_} % </span>
+                        </div>
+                        <div class="progress-bar progress-bar-success"  ng-if="info.valorPercentualExecucaoFisica > 50" style="width: {_ info.valorPercentualExecucaoFisica _}%">
+                            <span> {_ info.valorPercentualExecucaoFisica_} % </span>
+                        </div>
+                    </div>
+                    <hr>
+                    <label> Data da ultima Execução Física: </label>
+                    <span> {_ info.dataPercentualExecucaoFisica | date: 'dd-MM-yyyy' _} </span>
+                    <hr>
+                    <label> Projeto Associado: </label>
+                    <span ng-if="info.projeto.descricao != ' '"> {_ info.projeto.descricao _} </span>
+                    <span ng-if="info.projeto.descricao == None"> Nenhum projeto associado </span>
+                    <hr>
+                    <label> Valor total previsto:  </label>
+                    <span> {_ info.valorTotalPrevisto | currency: "R$" _} </span>
+                </div>
+            </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading"><h4>Informação sobre a Instituição</h4></div>
+            <div class="panel-body">
+                <div class="list-group">
+                    <label> Nome da Instituição Associada: </label>
+                    <span> {_ info.instituicao.nome _} </span>
+                    <hr>
+                    <label> CNPJ da Instituição: </label>
+                    <span> {_ info.instituicao.cnpj _} </span>
+                    <hr>
+                    <label> Tipo da Instituição: </label>
+                    <span> {_ info.instituicao.tipoInstituicao.descricao _} </span>
+                    <hr>
+                    <label> Ente Executor: </label>
+                    <span> {_ info.instituicao.tipoInstituicao.enteExecutor _} </span>
+                    <hr>
+                    <label> Financiadora do Empreendimento? </label>
+                    <span ng-if="info.instituicao.tipoInstituicao.financiador  == 'true'"> Sim </span>
+                    <span ng-if="info.instituicao.tipoInstituicao.financiador  == 'false'"> Não </span>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+

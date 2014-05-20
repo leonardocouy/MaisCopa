@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title> + Copa - Todas as informações sobre os empreendimentos da copa em um só lugar! </title>
+        <meta name="generator" content="Bootply">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!--ANGULAR JS-->
+         <script src ="//ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+         <script src ="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+         <script src ="../static/js/loading-bar.js"></script>
+         <link href  ="../static/css/loading-bar.css" rel="stylesheet" />
+         <script src ='../static/js/app.js'></script>
+         <!-- FIM ANGULAR JS-->
+
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+
+        <!--Bootstrap-->
+        <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+        <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+        <!--FimBootstrap-->
+
+        <!--Twitter Widget Authetication-->
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+        <!--CSS-->
+        <style type="text/css">
+            html,body {
+              height:100%;
+            }
+
+            .container-full {
+              margin: 0 auto;
+              width: 100%;
+              min-height:100%;
+              background-color: #0099CC;
+              padding-bottom:10px;
+              overflow:hidden;
+            }
+        </style>
+        <!--FIMCSS-->
+</head>
+
+<body>
+
+<div class="container-full">
+   <!--CABEÇALHO-->
+
+    <div class="modal-head" align="center">
+        <a href="/"><img src="http://oi59.tinypic.com/snyn7n.jpg"></a><br>
+        <span style="color: rgb(255,255,255)">  Todas as informações sobre os empreendimentos da copa em um só lugar!</span>
+   </div>
+    <!--FIM CABEÇALHO-->
+    <!--CORPO-->
+    <div ui-view>  <!-- O UI-VIEW VEM DA BIBLIOTECA UI-ROUTER QUE VAI VARIAR DE ACORDO COM A ROTA ESCOLHIDA. -->
+
+        <div class="modal-dialog">
+              <div class="modal-body">
+                  <form>
+                    <div ng-repeat="procura in pesquisa">
+                        <div class="form-group">
+                            <select class="form-control input-lg" ng-init="listarCidades()" ng-options="cid for cid in listaCidades" ng-model="pesquisa[$index].cid">
+                                <option value="" disabled=""> Selecione a cidade</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select class="form-control input-lg" ng-init="listarTemas()" ng-options="tema for tema in listaTemas" ng-model="pesquisa[$index].tema">
+                                <option value="" disabled=""> Selecione o tema</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                          <button class="btn btn-primary btn-lg btn-block" ng-click="listarRegistros(pesquisa[$index].cid,pesquisa[$index].tema)">Visualizar Informações</button>
+                        </div>
+
+                        <div ng-show="showHeader" class="panel panel-heading">
+                            <h4>Empreendimentos encontrados nesta categoria:</h4>
+                            <div class="list-group">
+                                <a class="list-group-item"  ui-sref="route_info" ng-repeat="registro in infos" ng-click="listarInfos(registro.id)"> {_ registro.descricao _} </a>
+                            </div>
+                        </div>
+                    </div>
+                  </form>
+              </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12" align="center">
+        <h4 style="color: rgb(255,255,255)">O Que dizem por aí?</h4>
+        <a class="twitter-timeline" width="600" height="400" data-dnt="true" href="https://twitter.com/search?q=%23n%C3%A3ovaitercopa" data-widget-id="449141096799404033">O que estão dizendo sobre a Copa por aí...</a>
+    </div>
+
+    </div>
+</div>
+   <!--FIMCORPO-->
+</body>
+</html>
+
+

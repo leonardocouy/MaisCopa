@@ -1,0 +1,4 @@
+cron:
+- description: deleta os xmls e baixa eles
+  url: /cron_baixar/baixar_xml
+  schedule: every 24 hours
