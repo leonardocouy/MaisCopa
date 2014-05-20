@@ -1,1 +1,2 @@
 tekton==2.2.1
+xmltodict==0.9.0
