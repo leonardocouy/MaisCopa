@@ -1,20 +1,31 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
+<<<<<<< HEAD
 from google.appengine.api.app_identity import app_identity
+=======
+>>>>>>> 580c5ff8ddc47a3d0be3581932eba491e8999c94
 import xmltodict
 from google.appengine.api import urlfetch
 from google.appengine.ext import blobstore
 
+<<<<<<< HEAD
 bucket_identity = app_identity.get_default_gcs_bucket_name()
 
+=======
+>>>>>>> 580c5ff8ddc47a3d0be3581932eba491e8999c94
 
 def index(_write_tmpl):
     _write_tmpl('templates/info.html')
 
 
+<<<<<<< HEAD
 def ler_arquivo_dict(filename):
     blobstore_filename = '/gs/{0}/{1}'.format(bucket_identity, filename)
     blob_key = blobstore.create_gs_key(blobstore_filename)
+=======
+def ler_arquivo_dict(fileName):
+    blob_key = blobstore.BlobInfo.all().filter('filename = ', fileName).get().key()
+>>>>>>> 580c5ff8ddc47a3d0be3581932eba491e8999c94
     blob_reader = blobstore.BlobReader(blob_key)
     conteudo = blob_reader.read()
     dict = xmltodict.parse(conteudo, process_namespaces=True)
@@ -28,6 +39,10 @@ def listar_cidades(_json):
     for cidade in dictCidades['collection']['http://www.portaltransparencia.gov.br/copa2014:cidadeSede']:  # PROCURE POR CIDADE NO DICTCIDADE
         listaCidades.append(cidade['descricao'])  # ADICIONE NA LISTA O VALOR(NOME DA CIDADE) DA CHAVE "DESCRICAO" DO DICIONARIO CIDADE.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 580c5ff8ddc47a3d0be3581932eba491e8999c94
     _json(listaCidades, '')  # Transforme em JSON PROTEGIDO, A LISTA CIDADES.
 
 
@@ -54,6 +69,10 @@ def buscar_infos(_json, cidade, tema):
     _json(lista_infos)
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 580c5ff8ddc47a3d0be3581932eba491e8999c94
 def listar_info(_json, cod):
     ns = 'http://www.portaltransparencia.gov.br/copa2014:empreendimento'
     urlfetch.set_default_fetch_deadline(60)
