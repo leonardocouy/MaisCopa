@@ -1,5 +1,4 @@
 MaisCopa
-<<<<<<< HEAD
 ==================
 ```
 Projeto feito em Python + App Engine + Tekton + AngularJS
@@ -19,25 +18,8 @@ Como ativar o projeto(ambiente virtual) em poucos passos:
 * 2 - Instale o virtualenv com o pip
 * 3 - Crie o ambiente virtual (obs: com python2)
 * 4 - Abra o terminal na pasta SRC e rode:
- (UNIX) ```ln -s ../(SEU AMBIENTE VIRTUAL)/lib/python2.7/site-packages lib```
- (WINDOWS) ```MKLINK /D lib ..\(SEU AMBIENTE VIRTUAL)\Lib\site-packages```
+  * (UNIX) ```ln -s ../(SEU AMBIENTE VIRTUAL)/lib/python2.7/site-packages lib```
+  * (WINDOWS) ```MKLINK /D lib ..\(SEU AMBIENTE VIRTUAL)\Lib\site-packages```
 * 5 - Ative o ambiente virtual
 * 6 - Instale os pacotes usando o requirements.txt (pip install -r requirements.txt)
 * 7 - Pronto, rode =D!
-=======
-========
-
-Projeto feito em Python + App Engine + Tekton + AngularJS
-.Trabalho usando Dados Abertos da Copa do Mundo.
- Aluno: Leonardo Flores Couy
- Professor: Marcelo Brito 
- Matéria: Sistemas Gerenciadores de Banco 
- Universidade Presidente Antonio Carlos - 2014.
-
-
-========
-
-
-requirements.txt incluso na pasta venv, nele contém os pacotes usados no python, 
-basta usar o pip, para baixar estes pacotes quando estiver conectado ao seu venv =D.
->>>>>>> 580c5ff8ddc47a3d0be3581932eba491e8999c94

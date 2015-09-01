@@ -1,8 +1,4 @@
 cron:
-<<<<<<< HEAD
 - description: baixa os xmls disponibilizados diarios
-=======
-- description: deleta os xmls e baixa eles
->>>>>>> 580c5ff8ddc47a3d0be3581932eba491e8999c94
   url: /cron_baixar/baixar_xml
   schedule: every 24 hours
