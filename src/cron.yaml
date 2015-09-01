@@ -1,0 +1,4 @@
+cron:
+- description: baixa os xmls disponibilizados diarios
+  url: /cron_baixar/baixar_xml
+  schedule: every 24 hours
