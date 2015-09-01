@@ -1,13 +1,18 @@
 MaisCopa
 ==================
-```
+
 Projeto feito em Python + App Engine + Tekton + AngularJS
+
 **Trabalho usando Dados Abertos da Copa do Mundo.**
+
 **Aluno:** Leonardo Flores Couy
+
 **Professor:** Marcelo Brito
+
 **Matéria:** Sistemas Gerenciadores de Banco de Dados II
+
 Universidade Presidente Antonio Carlos - 2014.`
-```
+
 
 **ANTES DE TUDO CERTIFIQUE-SE QUE POSSUI APP ENGINE DEVIDAMENTE INSTALADO EM SUA MÁQUINA**
 **O PROJETO APENAS RODA EM PYTHON 2.x**
